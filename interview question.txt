@@ -1,0 +1,261 @@
+1. Why is String immutable in Java?
+Security
+String Pool
+Thread Safety
+HashMap key usage
+
+2. Difference between == and equals()?
+	==  compare object reference (memory address) 
+	equals() compare object content and value
+
+3. Difference between ArrayList and LinkedList?
+	
+	Array List = 
+		 dynamic array 
+		 manipuation with array list slow beacuase if remove a element then all bits are shifted 
+		 memory used less
+		its act as a list  . implemntation in list 		
+		its better for store and accessing data 
+
+	Linked list =
+		double linked list
+		maniputaion is faster than array list because used a doubly linked list
+		memory used is more than Array list becasuse it has a previous and next referance
+		its acts as a list and dequeue 
+		its better for manipulation data 
+
+		
+4. Difference between HashMap, Hashtable, and ConcurrentHashMap?
+	
+
+
+5. What is the difference between Comparable and Comparator?
+	
+
+6. Explain final, finally, and finalize().
+
+	final key word used for create a variable , method and class 
+	final variable value does not change 
+	final method does not override 
+	final class does not inherit 
+	
+	finally : 
+		finally used for exception handling 
+		it execute afther a try , catch block also a
+		its execute if exception occure or not 
+	its mainly used for 
+		closed task and closed a file and database connection
+
+	finalize()	:
+		 its method used in object class
+		method called by garbage collector to before object remove from memory 
+		traditinally used for cleanup opration 
+			
+
+
+7. What are immutable classes? How do you create one?
+	String,
+	Integer
+	Long,
+	LocalDate
+
+	Once an object is create its state remain unchange 
+	
+	create a Immutable class
+	1) make a class final
+	2) all variable declare as a private final 
+	3) do no create a Setter method 
+	4) inisalized a field through a constructor 
+	5) use defensive copies for mutable fields 
+	
+	eg : String is a comman example of immutable class 
+
+
+8. What is the difference between abstraction and encapsulation?
+	
+	abstraction
+		1) Hide implementation details 
+		2) focus on how object works 
+		3)Achive using abstract class and interface
+		4) Design level 
+		5) Car drive without knows the engien details 
+
+	Encapsulation
+		1) hide data from direct access
+		2) focus how data protect
+		3) By using private and getter setter variable 
+		4) implementation level
+		5) Back Account 
+
+9. Can we override static methods?
+	No we cant override a static method 
+	
+
+10. What is the difference between method overloading and overriding?
+	Collections
+
+11. How does HashMap work internally?
+Expected answer:
+Hashing
+Bucket
+HashCode
+Equals
+Collision handling
+Treeification (Java 8)
+
+12. Why should hashCode() and equals() be overridden together?
+
+13. What happens if two keys have the same hash code?
+
+14. Difference between HashMap and TreeMap?
+
+15. How do you sort a list of custom objects?
+
+Collections.sort(list, Comparator.comparing(Employee::getName));
+
+Multithreading
+
+16. Difference between Process and Thread?
+
+17. Difference between start() and run()?
+
+18. What is Synchronization?
+
+19. Difference between synchronized and ReentrantLock?
+
+20. What is Deadlock?
+
+Example:
+
+Thread1 -> Lock A -> Lock B
+Thread2 -> Lock B -> Lock A
+
+21. Difference between Callable and Runnable?
+
+22. What is ExecutorService?
+ExecutorService service =
+        Executors.newFixedThreadPool(5);
+
+23. What is a Race Condition?
+
+24. What is the volatile keyword?
+Java 8
+
+25. What are Lambda Expressions?
+list.forEach(item -> System.out.println(item));
+
+26. What is Functional Interface?
+@FunctionalInterface
+interface Calculator {
+    int add(int a,int b);
+}
+
+27. Difference between Stream and Collection?
+28. Explain map() and flatMap().
+29. Difference between findFirst() and findAny()?
+30. How to remove duplicates using Streams?
+list.stream()
+    .distinct()
+    .collect(Collectors.toList());
+Exception Handling
+31. Difference between Checked and Unchecked Exceptions?
+32. Difference between throw and throws?
+33. Explain custom exceptions.
+34. Can we have multiple catch blocks?
+35. What happens if an exception occurs inside a finally block?
+Spring Boot
+36. What is Spring Boot?
+37. Difference between @Component, @Service, and @Repository?
+38. Difference between @Autowired and Constructor Injection?
+
+Preferred:
+
+@RequiredArgsConstructor
+@Service
+public class UserService {
+    private final UserRepository repo;
+}
+39. What is IOC and Dependency Injection?
+40. Difference between BeanFactory and ApplicationContext?
+41. Explain Spring Bean Life Cycle.
+42. What is @SpringBootApplication?
+
+Contains:
+
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+43. What is Auto Configuration?
+44. Difference between @RestController and @Controller?
+45. Explain Profiles in Spring Boot.
+Spring Data JPA
+46. Difference between save() and saveAndFlush()?
+47. What is Lazy Loading and Eager Loading?
+48. Difference between OneToOne, OneToMany, ManyToOne?
+49. What is N+1 Query Problem?
+50. How do you write custom queries?
+@Query("SELECT e FROM Employee e WHERE e.salary > :salary")
+Microservices
+51. What are Microservices?
+52. Difference between Monolithic and Microservices?
+53. What is API Gateway?
+54. What is Service Discovery?
+
+Examples:
+
+Eureka
+Consul
+55. What is Circuit Breaker?
+
+Examples:
+
+Resilience4j
+Hystrix
+56. How do Microservices communicate?
+REST API
+Kafka
+RabbitMQ
+SQL
+57. Difference between DELETE, TRUNCATE, and DROP?
+58. Difference between INNER JOIN and LEFT JOIN?
+59. What are Indexes?
+60. How do you find the second highest salary?
+SELECT MAX(salary)
+FROM employee
+WHERE salary <
+(
+    SELECT MAX(salary)
+    FROM employee
+);
+61. Difference between WHERE and HAVING?
+62. What is Normalization?
+MongoDB (Important for your profile)
+63. Difference between MongoDB and MySQL?
+64. What is Aggregation Framework?
+65. Difference between Embedded Documents and References?
+66. Explain Indexing in MongoDB.
+67. How do you optimize MongoDB queries?
+Scenario-Based Questions
+68. Your API is taking 10 seconds. How will you optimize it?
+69. How do you handle millions of records?
+70. How would you design a URL Shortener?
+71. How do you secure a Spring Boot application?
+72. How do you implement JWT Authentication?
+73. How do you handle distributed transactions in Microservices?
+74. How do you improve application performance?
+75. Explain a challenging production issue you solved.
+
+These scenario-based questions are asked very frequently for 3–5 years experienced Java/Spring Boot developers. Focus especially on:
+
+HashMap internals
+Collections
+Java 8 Streams
+Multithreading
+Spring Boot
+JPA/Hibernate
+Microservices
+SQL queries
+MongoDB
+System Design basics
+
+Mastering these topics will cover a large portion of typical Java developer interviews at the 3+ year level.

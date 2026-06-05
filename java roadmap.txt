@@ -1,0 +1,44 @@
+
+1) syntax
+2) condition states 
+3) loops
+4) variables 
+5) object oriented 
+	class,
+	object,
+	Encapsulation,
+	inheritance,
+	abstraction,
+	polymorphism,
+	Multithreading
+	Exception Handling
+	File Handling
+	DB Connectivity
+	
+
+	Relational DB
+		SQL
+		
+	NoSql
+	   MongoDb
+	   redis
+	   cassandra
+	
+
+	jdbc
+	servlet
+	hibernate
+	spring
+	Microservices
+	
+	MAVEN
+	GRADEL
+
+	Git
+	jenkins
+	
+	docker
+	(containerization )
+	kubernetes
+	
+	

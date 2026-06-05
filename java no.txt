@@ -1,0 +1,839 @@
+
+	final : 
+		we can create a variable, method,class by using final keyword 
+		final variable value can not be change 
+		final method does not be override
+		final class can not be inherit 
+	
+	finally : finally keyword used for Exception handling 
+			execute afther a try catch block ,regardlless whetere Exception occure or not 
+			
+		Always Execute Afther a try catch block
+		Used for Cleanup task such a s closing files and database connections 
+		Execute even exception is thrown.
+
+	finalize : 
+		The finalize() method is define in a Object class and is called by Garbage Collector 
+		before a object remove from memory 
+		traditionally used for cleanup opration 
+
+
+--------------------------------------------------------------------------------------------------------------
+
+	Error : inrecovrable condition 	
+
+	Exception:  Exception means unexspected event occures 	during exsicution of program 
+	Exception handling : Handle a Exception at a runtime is called Exc handling 
+				we can use try,catch, finally block, throw, throws to handle a exception	
+
+
+-----------------------------------------------------------------------------------------------------------------
+	Memory allocation
+	
+	Stack memory : create when the method is called 
+
+	Heap memory : create when object is  created 
+	
+	static memory : assign the value to  static variable 
+
+		
+
+	
+
+
+
+	Array :
+		is a liner data structure which is used to store a data having same datatype in one variable 
+
+	int a[]=new [10];
+	int b[]={1,2,3,4}
+
+
+-------------------------------------------------------------------------------------------------------------------------	
+	String : 
+		String a sequential combination of characters in a one Variable is called String 		
+		String is immutable 
+		
+	StringBuffer:
+		StringBuffer is mutable 
+		StringBuffer is Thread Safe
+		Slower due to Synchronization		
+		Memmory Slightly less efficient
+		Suites for Multithread enviroment
+		Method  := append(),reverse(),delete(),insert();
+
+	StringBuilder:
+		StringBuilder is mutable 			
+		StringBuilder is Not Thread Safe 
+		faster due to Synchronization
+		Memmory More efficient
+		Suites only Single thread enviroment
+		Method := append(),reverse(),delete(),insert();
+-------------------------------------------------------------------------------------------------------------------------
+	Static : -
+		Static Keyword used for assign a static method ,variable or block .
+		static method is runs when every the program is run .
+		static block run when every the class loader is load the class .
+		static variable is access by only of class name we can change the variable value by Using ClassName .
+		
+	
+	Object :- object is a real time entity 
+
+	
+------------------------------------------------------------------------------------------------------------------
+
+	this and super keyword 
+
+		this keyword used for assign a value to the called object ;
+	
+		eg: 	public int setAge(int age)
+			{ 
+			 this.age=age;
+			}	
+		
+		this();
+		method used to called a constructor of same class
+		
+
+
+		Super keyword used for called a parent class constructor 
+			
+		every constructor have a method is super when ever a create a object the called a parent contructor 
+		every constructor have first statement is super();
+
+		eg:
+			Every class is extends a Object class by Default .
+
+			public class Abcd extends Object  
+			{
+				public Abcd()
+				{ super();  //default in every constructor 
+				}
+			}
+
+
+
+		
+-------------------------------------------------------------------------------------------------------------------------
+ Anonymous object 
+
+	The object does't have a varible 
+	ex:  new A();  // anonymous object 
+	
+	this object can not reuse its only used a one time 
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	Encapsulation
+
+	Java is base one for basic piller 
+		1) encapsulation 
+		2) polymorphisum
+		3) inheritance
+		4) Abstraction
+
+	1) Encapsulation:	
+			 combination of data members and member function in a single unit 
+
+		Encapsulation is handle by a private , public ,protected access modifiers customize methods like getter and setter  in a class.
+
+	 	
+
+	2) Inheritance :
+ 			 Means the one class inherit all properties of another class
+
+	
+		IS-A :
+			Is-A relationshipe is synonymous with inheritance .
+			it means one object is a specialized type of another object 
+	
+		Concept:
+			 If Class B inherits from Class A (B extends A), it establishes that B IS A type of A.		
+
+		Has-A : 
+			In this one class contains a reference to another class as a member.
+		
+		Concept: 
+			Instead of inheriting from another class, an object owns or contains an object.
+
+	
+	Types of inheritance :
+
+		1) single inheritance :
+					In this inheritance only chiled class have a one parent
+		2) Multilevel inheritance :
+					In this inheritance there is chain of patent and chiled class.
+		3) Multiple Inheritance :
+					In this inheritance one child class have a two or more parent class.
+		4) herarchical Inheritance :
+					In this inheritance  One Parent class have a multiple child classes .
+		5) Hybrid Inheritance : 	
+					Combination or mixing a two inheritance 
+		
+		
+	AcessModifires: 
+		private  : only for a class
+		protected : same class, same package , same package sub class 
+		public : access to any where 
+		default : same class, same package 
+
+
+	Polymorphisum: (Many form/ Many behaviors)
+			1)Same things but diffrent behaviors
+
+	we have two types a polymorphisum 
+	1) Compile Time Polymorphisum :
+			Created by Method OverLoading 
+			The method has a same name but different types of arguments 
+	
+	2) RunTime Polymorphisum:
+			created By Method Overriding 
+			The Method of child class is same as that of parent class method 
+
+			ex : shows by Dynamic Method Dispatch 
+			In this two classes have a same method name and parameters .
+
+			A a=new B();		B b=new B();
+			a.show();		b.show();
+			
+
+
+	What is hashcode?
+		== , and equals()
+		== : comparing referance of object 
+		equals() : comparing a contant of variable 
+				
+	
+		
+	down casting and up casting 
+			
+	A obj=new B(); // upcasting  A obj= (A) new B();
+
+	B obj1= (B) obj; // down casting   // here we use a obj of parent class cast with child class 
+
+	
+
+	wrapper class:
+
+	java is not pure a object oriented language because java used a primitive data types
+
+	int -> Integer
+	char -> Character
+	double -> Double etc..
+		
+
+	int num=7;	// Premitive Variable   created by primitive datatype 
+	Integer num1=7; // Referance Variable   created by class Name
+
+	AutoBoxing :
+			primitive value store in a wrapper object is called AutoBoxing 
+
+		int num =7;
+		Integer num1=new Integer(num);   // Boxing
+		Integer num1=num;   		// Auto Boxing
+
+	Unboxing :  
+			wrapper object value store in primitive variable is called unboxing 
+		Integer num1=10;
+		int num=num1;     	//  unboxing 
+
+
+	Abstraction : hide essential data from user and give only used ful data to user.
+		
+		1) Abstract class declare using abstract keyword 
+		2)  abstract as well as non abstract method 
+		3)  can not create a object we should implement in another class and then object create 
+		4)  public private protected used 
+		5) can create a contructor 
+			single inheritance 
+			static ,final variable  
+		6)it support single threaded enviroment 
+		7) one class extend only one class		
+		
+		whenever the abstract class methods implemted in normal class thet class called concreat class 
+
+
+
+	Interface :  
+			1)create by interface keyword 
+			2)In interface All method is public abstract 
+			3)classes used to  implements keyword to implement the interface 
+			4)in interface there is a final static variable 
+			5)it suppoert a muthithreade enviroment
+
+			6)in interface has a final static variable 
+			because interface not store data in stack memory .
+			7) one class implement multiple interface
+			
+
+	Inner class :
+			class inside the class is called inner class
+			we can create a static as well as nonstatic varible or method in inner class 
+			called by 
+			A.B.static_variable 
+
+			A a=new A();
+			a.show();		// normal called 
+		
+			A.B b=a.new B();	// inner class object creation
+			
+
+	
+	anonymous class :
+				class does not have a name is called anonymous class
+
+				used in interface, functinal interface , lambda expression .
+
+				class A{
+					 public void show1(){ sout("show in A ");
+					}	
+				public class demo{
+			    public static void main(String  args[]){
+	//       this is a annoymous class			A a=new A()
+	//							{
+	//								public void show()
+	//								{
+	//							 	sout(" show is called ");
+	//								}
+	//					   		}
+	//							   }
+				         }
+					
+
+
+
+ inner join query :
+			select s from student s inner join collage c on s.cid=c.cid;
+
+			
+		
+	
+
+		
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Enums 
+	: are the name constant 
+
+	enum status{
+
+		Running,Failed,Success,Pending;
+
+	---------------------------------------------
+		
+		}
+
+
+	
+
+-------------------------------------------------------------------------------------------------------------------------
+Annotation:  
+		suppliment to compiler the runtime or we also called as a metadata 	
+
+
+	Like @Depricated
+	     @Override 
+	
+----------------------------------------------------------------------------------------------------------------------------
+
+interface :
+ 		Mainly three types of interface 
+		1) Normal Interface 
+		2) Function Interface (SAM)
+		3) Marker interface  ( Black interface )
+	
+	Multiple method in Normal Interface 
+			-------------------------------	
+	Functinal Interface :
+			1)only one abstract method in functional interface
+			2) In JAVA 8 Feature we used a Lambda Expresion 
+
+		eg: Runnable 
+--------------------------------------------------
+	Markar interface :- (Black Interface) 
+			1)No abstract method in marker interface 
+			2)Marker interface used for seralization and deseralization 
+		 	3)ex: Store a Game data to Harddisk when close the Game (serialization),
+		     	Load the data when ever the game is start (Deserialization) .
+		
+			eg: Serialize interface in Java 
+
+----------------------------------------------------------------------------------------------------------------
+
+Exception: 
+
+	1) compileTime Error:
+	2) runtime Error : Exceptions 
+	3) Logical Error :
+
+	
+	Exception : 	unexcepected event occure in executing program is called Exeception
+	
+	check Execption : eg: SQLException IOException
+
+	uncheck Execption: RunTimeException ( Arithmatic , ArayIndexOutOfBound, NullPointer) etc..
+
+	
+	using try ,catch block handle a execption
+		throw and throws key word used for throwing the Exception catch block catch that Exception
+
+		we can create a Customized Exception 		
+
+		finally block used to close a resources 
+		closing ,autoclosing interface used to try block close the resources 
+	
+
+
+-------------------------------------------------------------------------------------------
+
+
+MultiThreading :-
+		
+	1) The Technique that allows a single proccess  to be devied into smaller independent units (Threads) that run concurrently.
+	
+	Thread is a lightweight unit od execution within a proccess 
+		
+	1) Muthithreading is a java feature that enable program to run multiple threads simultaneously ,
+	   allows task to execute in parallel until the cpu efficiently.
+		
+	Thread allow parallel execution of tasks.
+	
+	We can implement Multithreading by using 
+		
+		1) Thread class extend
+		or 
+		2) Implements the Runnable Interface 
+
+		Use extends Thread: if your class does not extend any other class.
+		Use implements Runnable: if your class already extends another class 
+					(preferred because Java doesn’t support multiple inheritance).	
+	
+		Advantages :
+		1) improve performance : reduce execution time 
+		2) Responsiveness : application remain responsive beacuse while perform background task 
+		3) Better User Experience : smooth execution for multiple task 
+		4) Resource Sharing : some proccess share memory and resource , avoiding duplication.
+		
+
+		ex:
+			A a=new A();				
+			Runnable r=new Runnable(a);
+			Thread t1=new Thread(r);
+			t1.start();
+
+		ex: Runnable r= () ->{
+				 for(int i=0;i<=10;i++){ sout("hello");
+		        	};
+
+			Runnable r1=new () ->{
+					public void run()
+					{ for (int i=0;i<=10;i++)
+						{ sout("hi");
+						}	
+					}
+					     };
+			Thread t1=new Thread(r1);
+			Thread t2=new Thread(r);
+			t1.start();
+			t2.start();
+	
+
+	2) Mutation: ( change the value )
+			like String is mutatble 
+	
+		Thread safe means only one thread can work that one point .
+	used ->	if we want to Thread safe the method we can used a synchronized before method .
+		and all thread is join() ;  
+	ex: public synchronized void increment()
+		{  count++; }
+
+		ex:-
+	
+		class Count{
+			int count=0;
+		public synchronized void increment()
+			{ count++; }		
+				}
+	public class demo{
+		public static void main () {
+		Count c=new Count();
+		Runnable r=()->{for(int i=0;i<=100;i++){ sout("hello"); c.increment(); }};
+		 Thread t1=new Thread(r);
+			t1.start(); 
+			t1.join();
+
+		}
+		}	
+	
+
+	States of Thread : ==
+
+ 	New State --start()--> Runnable state---run()-->Running State---sleep()/wait()-->Wating state--Notify()-->
+	--->Runnable State---stop()---> Dead state;
+
+	Afther Running we can directly stop() and change into Dead State .
+
+	
+	1) NEW state :  Creating a thread 	
+	2) Runnable State : Waite for Schedular start() method to Runnable State .
+	3) Running State : Actually the Running  run() method to Running State .
+	4) Wait State : by using sleep and wait method to change The Running to Wait State .
+	5) Dead State : stop() method to Dead state()
+
+
+	start() 	->  New -> runnable
+	run() 		->  runnable -> running
+	wait()	 	->  running -> wait
+	sleep()		->  running -> wait
+	notify() 	->  wait -> runnable
+	stop() 		->  running -> dead  OR runnable -> dead.
+	
+
+////////////////////////////////////////////////////
+
+	This classification governs how threads interact with the Java Virtual Machine (JVM) lifecycle and 
+	determine when an application exits.
+
+	User Threads (Foreground Threads):
+		 High-priority threads designed to execute core application logic.
+		 The JVM will active and refuse to shut down until all user threads finish running. 
+		The default main thread is a user thread.
+
+	Daemon Threads (Background Threads): 
+		Low-priority threads that provide utility services to user threads. 
+
+		Examples include the Java Garbage Collector or finalizer threads. 
+		The JVM terminates abruptly and exits immediately once the 
+		last active user thread finishes, disregarding any remaining daemon threads.
+------------------------------------------------------------------------------------------------------------------------
+
+	Platform Threads: 
+		Traditional Java threads that act as thin wrappers around operating 
+		system (OS) kernel threads.
+		 They carry a heavy memory footprint (usually 1MB for the call stack) 
+		and incur high context-switching costs.
+
+	Virtual Threads: 
+		Lightweight threads managed entirely by the JVM instead of the OS. 
+		Hundreds of thousands of virtual threads can run concurrently on 
+		a single platform thread, significantly reducing memory and overhead 
+		for I/O-bound workloads.
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+	Collection API concept 
+	Collection  interface
+	Collections class
+
+	collections : => collection is a main architure i java used to store and manipulate a data .
+		
+		
+	Collection is a main Interface it has extend in List, Queue, Set
+
+
+	***Collection is framework that provied a classes , interface to store  and manipulate group of object 
+	
+	List
+	Set
+	Queue 	
+
+	List is implemented in 
+	1) ArrayList   == store in a indexing form
+	2) LinkedList  == doubly linked list . 
+	3) Vector      == 
+	4) Stack       == 
+
+	
+	List : 	
+		characteristices :
+		1) follows insertion order 
+		2) allow Duplication	
+		3) index base access 
+
+	
+	1] Array List 
+
+	Interal Sturcute is Dynamic Array .
+		Features :
+			* Allow Duplicated 
+			* Maintain insertion order
+			* Not Synchronized 
+			* Fast retival 
+	
+	2] Linked List
+		Internal Structure is a Doubly Linked list.
+		Fearures :
+			1) insert/deletion faster
+			2) slow random access 		
+	
+	3] Vector : Similar to Array List 
+		    Synchronized 
+		    Thread Safe ( single Thread can access at a single Time) 
+
+	4] Stack: 
+		LIFO structure 
+
+--------------------------------------------------------------------------------------------------------------
+	Set Interface : 
+			1) No Dublication Occure 
+			2) NO Index it has a hash
+			3) Only One Null Value .
+
+		1) HashSet
+		2) LinkedHashSet
+		3) TreeSet
+		
+		1] HashSet :
+				1) No Dublication
+				2) Unordered 
+				3) internally use a HashMap
+			( Faster in Set)
+
+		2] LinkedHashSet:
+				1) No Dulication
+				2) inserstion Order
+			(Fast than TreeSet)
+
+		3] TreeSet :
+				1) No Doublication
+				2) Sorted Order 
+			(slow ) 
+---------------------------------------------------------------------------------------------------------------
+
+	Queue
+		Structure is FIFO.
+	1) ArrayDequeue
+	2) PriorityQueue
+
+	PriorityQueue:
+		1)sorted By Priority
+	
+	Dequeue: 
+		1)double ended Queue.
+
+
+--------------------------------------------------------------------------------------------------------------------------
+	Set :
+	1)HashSet         == avoid a dublicate elements 
+	2) LinkedHashSet  
+	3) TreeSet 	  ==  sort the element in sets atumaticaly 
+	
+	
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+	Map is also a interface ( No Part of Collection interface )
+		Map
+		1) HashMap		
+		2) LinkedHashMap
+		3) TreeMap	   :     	
+		4) HashTable       :     to working with synschonizes we used HashTable 
+		5) concurrent Hash Map : is a thread safe 
+
+		Map is store a data in form of Key Value Paired 
+
+		
+		Characteristic :
+				1) Unique Key 
+				2) Doublicate Value Allow 
+				3) Only one null Key 
+-----------				
+		1] HashMap:
+------------			1) UnOrdered
+				2) One null key Allow
+				3) Multiple Null Values Allow
+				4) Not Synchronized 
+	
+	How HashMap Works Internally?
+		1)Calculate hashCode()
+		2)Find bucket
+		3) Store key-value pair
+		4) Handle collisions using:
+		5) Linked List
+		6) Red Black Tree (Java 8+)
+	
+	HashMap used a equals() and Hashcode() method  to identify Key .
+	
+	
+	2]Linked HashMap :
+			1) maintinan insertion Order
+	
+	3) TreeMap :
+			1) store key in sorted order
+
+	4) HashTable:
+			1) Tread-Safe
+			2) Synchronized 
+			3) No Null key/value
+	5) 
+////////////////////////////////////////////////////////////////////////////////////////
+
+	Internally working of hash mapping 
+		:	
+			1) when ever we create a HashMap object 
+				create a 16 variable linkedList 
+				that linked List Store a data in form of node ( key , value , hash , next )
+			2) add a value in hashmap in form of Key, value pair 
+				by using key hash map create a hashcode 
+				and using that hashcode create a index 
+				and that index we insert the entry of hash map 
+			3) suppose the in another entry has a same index is generated then hash map compaire the keys
+				if keys are same then map update the entry  
+				if keys are diffrent compare a hash code 
+				if hashcode is diffrent the add the entry in same buket and connect the next value to the before node 
+	
+		
+----------------------------------------------------------------------------------------------------------------------------
+		Treeification: 			
+			if to may data insert in same bucket the its convert into a balanced tree ( Red black Tree)
+			
+			
+		
+
+		Difference between Collection and Collections?
+		Difference between List and Set?
+		Difference between ArrayList and LinkedList?
+		Difference between HashMap and Hashtable?
+		How HashMap works internally?
+		Difference between Comparable and Comparator?
+		Difference between HashSet and TreeSet?
+		What is ConcurrentModificationException?
+		--> when two or more thared work on same function and change the value of same variable then Concurrent Modification Execption ocuure .
+	
+		What is Fail-Fast and Fail-Safe?
+
+		
+		
+		Why override equals() and hashCode() together?
+		What is concurrent HashMap 
+
+
+	Collection   Duplicates		Order
+	ArrayList	Yes		Insertion
+	LinkedList	Yes		Insertion
+	HashSet		No		No
+	LinkedHashSet	No		Insertion
+	TreeSet		No		Sorted
+	HashMap	Keys 	No		No
+	LinkedHashMap	Keys No		Insertion
+	TreeMap		Keys No		Sorted
+.......................................................................................................
+
+		comparble:
+				
+					1) Single Variable Sort  by Comparable 
+					2) Affect on Original Class
+					3) Used A Compare() method to Sort 
+
+
+		comparator :
+			1) Comparator is a interface .
+					1) multiple variable sort by Comprator 
+					2) Does not Affect by Original Class
+					3) Used A Compared() method to sort 
+
+	
+--------------------------------------------------------------------------------------------------------------------
+
+
+
+	Function Interface 
+				forEach == cunsumer 
+	in Strea Api 		Filter  == Predicates
+				map     == Function
+				reducse == BinaryOprator 
+
+
+
+
+
+
+
+
+=========================================================================================================================
+
+Java version Wise Feature :
+		
+	1.8: 
+		1) Lambda Expresion:
+					1)used for Function Interface for redusing the code 
+
+				ex: comparable ,comparator , consumer,Supplier, Function etc..
+
+		2) Function Interface :
+					1) Interface which has only one Abstract method
+										
+		3) Method Reference :
+					Used for reduce the code 
+					
+		4) Optinal<class>  :	
+					It is used for handle NullPointer Exception .
+					
+	--------------------------------------------------------------------------------------------------------------------
+	11 :
+		1) 
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+Lambda Expressions   		       
+Functional Interfaces		
+Stream API			
+Optional			
+var			- LOCAL VARIABLE TYPE INFERANCE (LVTI) 
+				create a variable  in local 	
+			we create var varible in Local because 
+			in local variable we use for opration not to store in memory .
+
+
+Records		=======  A special class for storing immutable data. 
+				ex. public record Employee(Long id, String name) {}
+
+			Advantages
+				1) Less boilerplate code.
+				2) Immutable by default.	
+Pattern Matching
+Sealed Classes	==========>   Restricts which classes can inherit from a parent class.
+				advantages:
+					1) Better control over inheritance
+					2) Improves security and maintainability
+
+
+Virtual Threads ==========>   Lightweight threads managed by the JVM.
+				Advantages
+					Better scalability.
+					Excellent for microservices.
+					Better performance for I/O operations
+
+
+Garbage Collection
+Concurrent Collections
+CompletableFuture
+HTTP Client API	==========>  A modern API for making HTTP requests without third-party libraries.
+       			    Advantages :
+				Supports HTTP/2.
+				Supports asynchronous requests
+Switch Expressions
+		
+
+JVM Memory Management	:  
+				When Java Program run jvm devides memory in sevral part :
+				1) Heap Memory :
+						In this Memory used to Store a Object instance Variable 
+			
