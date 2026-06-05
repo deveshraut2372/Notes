@@ -350,7 +350,7 @@ Annotation:
 	
 ----------------------------------------------------------------------------------------------------------------------------
 
-interface :
+interface : 
  		Mainly three types of interface 
 		1) Normal Interface 
 		2) Function Interface (SAM)
@@ -630,7 +630,7 @@ MultiThreading :-
 --------------------------------------------------------------------------------------------------------------------------
 	Set :
 	1)HashSet         == avoid a dublicate elements 
-	2) LinkedHashSet  
+	2) LinkedHashSet  ==
 	3) TreeSet 	  ==  sort the element in sets atumaticaly 
 	
 	
@@ -706,21 +706,44 @@ MultiThreading :-
 		
 
 		Difference between Collection and Collections?
+
 		Difference between List and Set?
+
 		Difference between ArrayList and LinkedList?
+
 		Difference between HashMap and Hashtable?
+
 		How HashMap works internally?
+
 		Difference between Comparable and Comparator?
+			
 		Difference between HashSet and TreeSet?
+			
 		What is ConcurrentModificationException?
+			
 		--> when two or more thared work on same function and change the value of same variable then Concurrent Modification Execption ocuure .
 	
 		What is Fail-Fast and Fail-Safe?
-
-		
+			Fail-Fast : when doing a itration in acollection and modify that collection then concurrentModificationExecption ouccer thats called Fail-fast 
+	
+			Fail-safe : When doing a itration in a collection and modify that collection then avoid the Execption and execute safely itration incalled Fail-Safe .
+					copyonwriteArrayList
+					concurentHashMap 
+---------------------------------------------------------------------------------------------------------------------------------		
 		
 		Why override equals() and hashCode() together?
-		What is concurrent HashMap 
+		------>	its used for comparing the two varible .
+		
+-----------------------------------------------------------------------	
+		What is concurrent HashMap :
+					ConcurrentHashMap is a highly scalable, thread-safe alternative to HashMap and Hashtable
+					
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+		ConcurrentHashMap and CopyOnWriteArrayList : 
+							(the thread-safe variant of ArrayList) 
+		are high-performance concurrent utility classes in Java's java.util.concurrent package. 
+		They provide thread safety without the heavy performance penalties of traditional synchronization
+
 
 
 	Collection   Duplicates		Order
@@ -732,6 +755,10 @@ MultiThreading :-
 	HashMap	Keys 	No		No
 	LinkedHashMap	Keys No		Insertion
 	TreeMap		Keys No		Sorted
+
+
+
+		
 .......................................................................................................
 
 		comparble:
@@ -798,12 +825,52 @@ Stream API
 Optional			
 var			- LOCAL VARIABLE TYPE INFERANCE (LVTI) 
 				create a variable  in local 	
-			we create var varible in Local because 
-			in local variable we use for opration not to store in memory .
+			we create var varible in Local 
+			because in local variable we use for opration not to store in memory .
+
+Sealed class    ===>
+			Sealed class create by Sealed keyword 	
+			sealed class inherit in another class then sealed class gave a permits 
+			and that inherit class should be a final,sealed or non-sealed .
+		
+			eg: Sealed class Vehical permits Car,Bike
+				
+			If you want to extends a Sealed class then you should be create a 
+				1) Sealed class 2)non-sealed class 3) final class
+				eg: 
+			sealed class Vehical permits Car,Bike,Cycle{
+				
+				}
+			sealed Class Car extends Vehical{
+				}
+			final Class Bike extends Vehical{
+				}
+			non-sealed Class Cycle extends Vehical{
+				}
+				
+		same we can create a interface 
+			eg:
+			sealed interface A permit B{
+			
+			}
+			sealed interface B extend A{ 
+			}
+		
 
 
 Records		=======  A special class for storing immutable data. 
 				ex. public record Employee(Long id, String name) {}
+
+			A class called Data carrieer class 
+			
+			ex:  record Car(int weels,String name){ }
+
+				1)it has inbuild parameterized contructor 
+				2) it can extends only record class 
+				3) it can implement any interface 
+				4) in build equal method
+
+			
 
 			Advantages
 				1) Less boilerplate code.
@@ -831,9 +898,126 @@ HTTP Client API	==========>  A modern API for making HTTP requests without third
 				Supports asynchronous requests
 Switch Expressions
 		
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 JVM Memory Management	:  
+			
 				When Java Program run jvm devides memory in sevral part :
 				1) Heap Memory :
 						In this Memory used to Store a Object instance Variable 
+
+	Five Memory in java :
+
+	 1)Method Area	 2)Heap Memory	 3)stack Memory	 4)PC Register	 5)Native Method Stack 
+
+	Method Area : 
+		1) Method area we store a static varibales , and class data like (class_name,variable_name,methods name etc..)
+		
+	Heap Memory:
+		1) When we create a object in a main Method then the object is store in a heap memory and also refence of object is store in a stack memory.
+	
+	Stack Memory :
+		1) stack memory store a local variables means  The All method  Varibles .
+	
+	Pc Register :
+		1) In pc Register we can perform multiple task that task execute by Threads every thread has own pc register and that pc register
+		   store a address of instruction current Executing .  
+	Native Method Stack :
+
+		1) Its only used for Native Mathod .
+		2) That methods written other languages but itregrated in JDK.
+		3) when a Native method are called then the native mathod stack come into play .
+		4) Native Mathod Stack store a local variable of Native Method .
+	 
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+	JVM ARCHITURE :
+
+		JAVA RUN PROGRAMM java using command Javac fileName.java 
+		that file compiled by Java Compiler and convert into the .class file 
+		
+		classLoader : Responsibile for 3 Activity 
+			1) Loading
+			2) Linking
+			3) Inisalization
+				
+	1) Loading: 	
+		1) run the .class file
+		2) Generate binary data 
+		3) save some information method Area 
+	
+		save data like 
+			1) loader class name and its parent class Data 
+			2) if it has class or intrface or Enum then store that Data  
+			3) Modifires , variable  method info  etc...
+	
+	2) Linking 		
+		1) Verification :  ensure a corretness of .class file
+				   verify the format is every think is correct 
+				   if some error in verification throw the error verifyError  comes from java.lang.verify  
+		2) Preparation  :  
+				 Allocate the memory to static members or default values 
+
+		3) Resolution   : 
+				 Tranform symbolic reference to direct referance 
+	3) Inisalization:
+			 static variable assing the actual value to Execution of top to bottom 
+	
+	--------------------------------------------------------------------------------------------------------------
+
+	
 			
+		
+	
+			
+	
+	
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Garbage Collectors:
+
+		
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	Spring framework :
+			1)Spring is java framework its develop/build clean ,orgnized and maintanable application.
+			2) It provied Structred System
+			3) Standerlization : 
+					1) How Object Create
+					2) How they interact
+					3) How they configure 
+			simlie words Spring handle complex setup and focus on business logic.
+		
+
+
+
+
+
+
+
+
+
+	Spring Boot :
+		1) Spring Boot is build on Spring framework its help to developer to build 
+		   a standalon application with minimum configuration.
+		
+		Features :
+				1) Auto Configuration
+				2) Embeded Server
+				3) starter dependecy 
+				4) microservices
+		
