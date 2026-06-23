@@ -34,13 +34,14 @@
 
 	Heap memory : create when object is  created 
 	
-	static memory : assign the value to  static variable 
+	method memory : assign the value to  static variable 
 
-		
-
+	Pc Register :  for Thead execution task store in pc register 
+	
+	Native method memory :
 	
 
-
+		
 
 	Array :
 		is a liner data structure which is used to store a data having same datatype in one variable 
@@ -191,6 +192,7 @@
 
 	Polymorphisum: (Many form/ Many behaviors)
 			1)Same things but diffrent behaviors
+			one process executed by diffrent type 
 
 	we have two types a polymorphisum 
 	1) Compile Time Polymorphisum :
@@ -520,7 +522,7 @@ MultiThreading :-
 		The JVM terminates abruptly and exits immediately once the 
 		last active user thread finishes, disregarding any remaining daemon threads.
 ------------------------------------------------------------------------------------------------------------------------
-
+  
 	Platform Threads: 
 		Traditional Java threads that act as thin wrappers around operating 
 		system (OS) kernel threads.
@@ -994,14 +996,21 @@ Garbage Collectors:
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	Spring framework :
-			1)Spring is java framework its develop/build clean ,orgnized and maintanable application.
-			2) It provied Structred System
-			3) Standerlization : 
-					1) How Object Create
-					2) How they interact
-					3) How they configure 
-			simlie words Spring handle complex setup and focus on business logic.
+			   1) Spring ia a Java Framework  to build a clean organized and maintanable Application
+			   2) provied a structured system to manage the application components.
+			   3) Spring has Standerlization in 
+				 how create Object
+				 how to intract 
+				 how to configure
+			in simple Spring handle complex steup and focus on business logic .
+
+	problem solve by Spring :
+			1) object creation 
+			2) manage object lifecycle		
+			3) Dependecy injection
+			4) Configuration
 		
+		spring ensure object is loose coupling by dependecy inject on abstraction 
 
 
 
@@ -1021,3 +1030,146 @@ Garbage Collectors:
 				3) starter dependecy 
 				4) microservices
 		
+
+----------------------------------------------------------------------------------------------------------------------------
+
+	Java Base Configuration
+
+
+	1) Create a Configuration class with @Configuration annotation
+	2) Create Bean using @Bean annotation in configuration class 
+	3) Create IOC container Application Context and retrive the Bean in By using Spring IOC .
+	
+	
+	
+	//
+		How Spring IOC Container Works ?
+		1) We have Multiple Java Class
+		2) Configuration Files
+				1] XML Base Configuration
+				2] Java Base Configuration
+				3] AnnotationBase Configuration
+		3) IOC read the configuration File and also dependecy injection in configuration file 
+		4) And then Application is Ready to used .
+
+		in spring there is two Ioc Container 
+			1) BeanContext	
+			2) ApplicationContext
+/////////////////////////\\\
+		
+	Spring Bean :
+			Spring Bean is a Java Object .
+			Spring framework create a object and manage there life cycle 
+			and also provied the bean when ever the needed in application.
+			
+			Instaed of new keyword Spring handle object creation and dependecy managment by Using SPRIG IOC 
+			
+			that approch called Dependecy injection.
+			Spring provied the object when ever needed.
+				
+			
+
+////////////////////////////////////////////////////////////////////////////////////
+		
+	
+		1) XML Base Configuration :
+					For this configuration we used a XML File this is so confusing 			
+		2) Java Base configuration:
+			1) first we create class of java 
+			2) create configuration class with annotation (@Configuration) 
+			3) inside configuration class we create a methods that represent the java class 
+			   and that Method Annotated with ( @Bean ) 
+			4) In main class create a IOC Container and get that bean do working .
+		( @Configuration , @Bean ) 
+	
+		3) Annotation Base configuration:
+			1) first creates a Java Class That class annotated with @Componet 
+			2) create a configuartion class that class annotated with @Configuration
+				and @ComponentScan( basePackages="") inthis base package write the package name 
+				where java class present 
+			3) if multiple classes implements one implement 
+				then we used a @Qualifer("pass_Class_Name") Or @Primary annotation
+				
+
+------------------------------------------------------------------------------
+		core springboot annotation:
+			
+			@SpringBootApplication:
+						1) @EnableAutoConfiguration
+						3) @Configuration
+						2) @ComponetScan
+
+		Stereotype Annotation:		
+				1) @Componet:  : spring managed class component.
+				2) @Controller : web controller resolve server-side-view.
+				3) @Service    : class has a core buisness logic.
+				4) @Repository : Data access layerd.
+
+
+		Dependecy injection annotation:
+				@Autowired :
+				@Qualifire
+				@Primary
+				
+		Rest Api Annotation:
+			@RestController
+			@PostMappig @GetMapping @PutMapping @DeleteMapping 
+			@RequestBody
+			@PathVariable
+			@RequestParam
+			@ResponseBody
+			@Controller
+			@RequestMapping
+
+		Configuration Annotation :
+			@Configuration
+			@Bean
+			@Value
+			@ConfigurationProperties
+			
+		Spring Data Jpa annotation:
+			@Entity
+			@Id
+			@Column
+			@Transaction
+			
+		@Controller is main sterio type annotation
+			
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	Dependecy injection:
+
+		1) Dependecy injection is means one object injected in another object by using a Ioc container .
+			main three type 
+			contructor injetion
+			setter injection
+			field injection
+		
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+	constructor through we add a dependecy then is a Constructor injection
+//////////////////////////////////////////////////////////////////////////////////
+	setter method used to add dependecy then is a setter injection
+///////////////////////////////////////////////////////////////////////////////////
+	we used a @Autowired to implement the Field injection 
+		
+---------------------------------------------------------------------------------------------------------
+
+	
+		
+		
+	Springboot :-
+			Spring boot is a extention version of spring boot 
+		
+	Spring boot used for create a application with out required developer to 
+	write the same boilerplate Configurartion again and again .
+		Spring boot provied a  importtant feature :
+				1) Spring boot starter dependecy 
+				2) Auto configuration
+				3) Externalized configuration
+				4) Spring boot Actuator 
+				5) Easy to use a Embedded servlet 
+				6) Embedded server 
+	
+	
